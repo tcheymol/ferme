@@ -1,12 +1,9 @@
 $primary: #00c853;
 $secondary: #795548;
 
-
 @import '~bootstrap';
-
 
 .text-white-80 {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-

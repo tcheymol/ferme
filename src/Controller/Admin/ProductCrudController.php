@@ -6,6 +6,7 @@ use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -34,6 +35,9 @@ class ProductCrudController extends AbstractCrudController
             NumberField::new('price')->setLabel('price_e'),
             NumberField::new('kgPrice')->setLabel('kgPrice'),
             NumberField::new('quantity')->setLabel('quantity'),
+            ImageField::new('imageName')->setLabel('image')
+                ->setUploadDir('/public/images/products')
+                ->setBasePath('/images/products')
         ];
     }
 }

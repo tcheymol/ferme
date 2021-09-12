@@ -1,10 +1,11 @@
-users: Utilisateurs
-product: Produit
-products: Produits
 admin_home: Accueil admin
 admin_title: Admin Ferme Ponturin
-name: Nom
-weight_g: Poids (g)
-price_e: Prix (€)
+image: Image
 kgPrice: Prix/kg
+name: Nom
+price_e: Prix (€)
+product: Produit
+products: Produits
 quantity: Quantité
+users: Utilisateurs
+weight_g: Poids (g)
