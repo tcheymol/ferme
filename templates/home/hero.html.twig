@@ -1,6 +1,6 @@
 <header
         style="background-image: url('{{ asset('build/cover.jpg') }}');
-                min-height: calc(100vh - 40px);
+                height: calc(100vh - 40px);
                 "
 >
     <div style="background-color: rgba(0, 0, 0, 0.4);" class="h-100">
@@ -29,7 +29,8 @@
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                             <a class="btn btn-primary btn-lg px-4 me-sm-3 text-white"
                                href="{{ path('product') }}">{{ 'our_products'|trans }}</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#!">La ferme</a>
+                            <a class="btn btn-outline-light btn-lg px-4"
+                               href="{{ path('farm') }}">{{ 'the_farm'|trans }}</a>
                         </div>
                     </div>
                 </div>
