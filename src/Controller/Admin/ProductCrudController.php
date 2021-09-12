@@ -36,8 +36,8 @@ class ProductCrudController extends AbstractCrudController
             NumberField::new('kgPrice')->setLabel('kgPrice'),
             NumberField::new('quantity')->setLabel('quantity'),
             ImageField::new('imageName')->setLabel('image')
-                ->setUploadDir('/public/images/products')
-                ->setBasePath('/images/products')
+                ->setUploadDir('/public/images')
+                ->setBasePath('/images')
         ];
     }
 }

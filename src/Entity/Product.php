@@ -13,7 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Product
 {
-    const PUBLIC_IMAGE_PATH_PREFIX = '/images/products/';
+    const PUBLIC_IMAGE_PATH_PREFIX = '/images/';
 
     /**
      * @ORM\Id
