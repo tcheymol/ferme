@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'our_products'|trans }}{% endblock %}
+
+{% block body %}
+    <header style="height: calc(100vh - 40px);" class="bg-secondary"
+    >
+        <div class="container px-5 py-5">
+            <div class="row">
+                {% for product in products %}
+                    <div class="card col-4 p-2">
+                        <img src="{{ asset(product.imagePath) }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.price }}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
+{% endblock %}

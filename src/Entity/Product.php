@@ -13,6 +13,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Product
 {
+    const PUBLIC_IMAGE_PATH_PREFIX = '/images/products/';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -130,6 +132,11 @@ class Product
         $this->quantity = $quantity;
 
         return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return self::PUBLIC_IMAGE_PATH_PREFIX.$this->imageName;
     }
 
     public function getImageName(): ?string

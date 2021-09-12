@@ -17,8 +17,12 @@
     {% endblock %}
 </head>
 <body>
-{% block header %}{% endblock %}
+{% block header %}
+    {{ include('common/navbar.html.twig') }}
+{% endblock %}
 {% block body %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block footer %}
+    {{ include('common/footer.html.twig') }}
+{% endblock %}
 </body>
 </html>
