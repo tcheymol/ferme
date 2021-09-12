@@ -333,7 +333,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "5.3",
-            "ref": "772b77cfb5017644547ef7f9364c54e4eb9a6c61"
+            "ref": "414ba00ad43fa71be42c7906a551f1831716b03c"
         },
         "files": [
             "config/packages/cache.yaml",
@@ -367,7 +367,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "4.3",
-            "ref": "c3bab0c981b79d4085e3b6734f7b5eebe35a0ca7"
+            "ref": "bbfc7e27257d3a3f12a6fb0a42540a42d9623a37"
         },
         "files": [
             "config/packages/mailer.yaml"
@@ -427,7 +427,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "5.3",
-            "ref": "905679249e7b10f06c572917a9022a72cbfedc04"
+            "ref": "97cb3dc7b0f39c7cfc4b7553504c9d7b7795de96"
         },
         "files": [
             ".env.test",
@@ -604,7 +604,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "1.9",
-            "ref": "5ff15d211e3d4a9216218f6b7f1572262efd74e2"
+            "ref": "404714014dd6ff7de9aa0f9582d592147359e617"
         },
         "files": [
             "assets/app.js",
