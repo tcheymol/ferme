@@ -22,6 +22,8 @@ return new class extends DefaultDeployer {
                 'vendor/',
                 'node_modules/',
                 'public/bundles/',
+                'public/build/',
+                'public/images/',
             ]);
     }
 
