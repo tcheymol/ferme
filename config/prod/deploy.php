@@ -25,11 +25,11 @@ return new class extends DefaultDeployer {
             ]);
     }
 
-    public function beforePreparing()
+    public function beforeOptimizing()
     {
-        $this->log('Remote npm');
-        $this->runRemote('npm install');
-        $this->runRemote('npm run build');
+        $this->log('Remote yarn');
+        $this->runRemote('yarn install');
+        $this->runRemote('yarn build');
     }
 
     public function beforeFinishingDeploy()
