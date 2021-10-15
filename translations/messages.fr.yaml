@@ -1,10 +1,14 @@
 admin: Admin
 admin_home: Accueil admin
 admin_title: Admin Ferme Ponturin
+discover_our_products: Découvrir nos produits
 farm_sales: Les ventes à la ferme
+find_us: Nous retrouver
 home: Accueil
+home_intro: Nous poduisons tous nos plans et notre pépinière en privilégiant des varietés rustiques, originales, et savoureuses
 image: Image
 kgPrice: Prix/kg
+know_more: En savoir plus
 login: Connexion
 markets: Les marchés
 name: Nom
@@ -18,4 +22,3 @@ site_title: La Ferme de Ponturin
 the_farm: La ferme
 users: Utilisateurs
 weight_g: Poids (g)
-find_us: Nous retrouver

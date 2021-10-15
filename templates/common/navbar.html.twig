@@ -5,7 +5,8 @@
 } %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent text-white position-fixed w-100">
     <div class="container px-5">
-        <a class="navbar-brand" href="{{ path('home') }}">{{ 'site_title'|trans }}</a>
+        <a class="navbar-brand {{ currentRoute == 'home' ? ' text-white ' : ' text-dark ' }}"
+           href="{{ path('home') }}">{{ 'site_title'|trans }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
@@ -13,24 +14,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% for routeName, routeTitle in routes %}
-                    <li class="nav-item"><a class="nav-link  fw-bold{{ currentRoute == routeName ? 'active' : '' }}"
-                                            aria-current="page"
-                                            href="{{ path(routeName) }}">{{ routeTitle|trans }}</a>
+                    <li class="nav-item">
+                        {{ include('common/button.html.twig', {text: routeTitle|trans, type: 'link', href: path(routeName), classes: currentRoute == 'home' ? ' text-white ' : ' text-dark ' }) }}
                     </li>
                 {% endfor %}
                 <li class="nav-item ms-3">
-                    <a class="btn btn-light px-2 fw-bold text-dark rounded-pill nav-link {{ currentRoute == 'app_login' ? 'active' : '' }}"
-                       aria-current="page"
-                       href="{{ path('app_login') }}">{{ 'login'|trans }}</a>
+                    {{ include('common/button.html.twig', {text: 'login'|trans, type: 'light', href: path('app_login')}) }}
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="btn btn-secondary p-2 fw-bold rounded-pill nav-link {{ currentRoute == 'product' ? 'active' : '' }}"
-                       aria-current="page"
-                       href="{{ path('product') }}">{{ 'our_products'|trans }}</a>
+                    {{ include('common/button.html.twig', {text: 'our_products'|trans, type: 'secondary', href: path('product')}) }}
                 </li>
                 {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item"><a class="nav-link"
-                                            aria-current="page"
                                             href="{{ path('admin') }}">{{ 'admin'|trans }}</a>
                     </li>
                 {% endif %}

@@ -3,7 +3,33 @@ $secondary: #DA9152;
 
 @import '~bootstrap';
 
+.btn {
+  span {
+    position: relative;
+    top: 0;
+  }
+
+  &:hover {
+    &.btn-secondary {
+      background-color: white;
+      color: $secondary !important;
+      transition: 300ms linear;
+    }
+
+    span {
+      top: -10px;
+      transition: 300ms linear;
+    }
+  }
+}
+
+.btn.btn-light {
+  position: relative;
+}
+
+
 .text-white-80 {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.8) !important;
 }
+

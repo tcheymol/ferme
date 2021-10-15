@@ -1,0 +1,9 @@
+<a
+        class="btn rounded-pill fw-bold btn-{{ type }}
+        {{ type == 'secondary' ? ' text-white': '' }} {{ classes is defined ? classes : '' }}"
+        href="{{ href is defined ? href : '#' }}"
+>
+    <span>
+        {{ text }}
+    </span>
+</a>
