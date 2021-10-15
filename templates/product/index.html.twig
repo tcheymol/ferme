@@ -5,19 +5,27 @@
 {% block body %}
     <header style="min-height: calc(100vh - 40px);" class="bg-light">
         <div class="container px-5 py-5">
-            <div class="row">
-                {% for product in products %}
-                    <div class="col-4 mt-2">
-                        <div class="card h-100">
-                            <img src="{{ asset(product.imagePath) }}" class="card-img-top" alt="{{ product.name }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ 'price'|trans }} : {{ product.price }} €</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+            <h1 class="text-center">{{ 'our_products'|trans }}</h1>
+            <div class="row mt-4">
+                <div class="card p-4">
+                    <p class="lead ">
+                        Cette section est en construction, vous pourrez très bientot consulter les produits disponibles
+                    </p>
+                </div>
             </div>
+            {# <div class="row"> #}
+            {# {% for product in products %} #}
+            {# <div class="col-4 mt-2"> #}
+            {# <div class="card h-100"> #}
+            {# <img src="{{ asset(product.imagePath) }}" class="card-img-top" alt="{{ product.name }}"> #}
+            {# <div class="card-body"> #}
+            {# <h5 class="card-title">{{ product.name }}</h5> #}
+            {# <p class="card-text">{{ 'price'|trans }} : {{ product.price }} €</p> #}
+            {# </div> #}
+            {# </div> #}
+            {# </div> #}
+            {# {% endfor %} #}
+            {# </div> #}
         </div>
     </header>
 {% endblock %}
