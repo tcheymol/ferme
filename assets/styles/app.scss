@@ -1,7 +1,6 @@
-$primary: #00c853;
-$secondary: #DA9152;
+$primary: #DA9152;
 
-@import '~bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 .btn {
   span {
@@ -9,10 +8,14 @@ $secondary: #DA9152;
     top: 0;
   }
 
+  &.btn-primary {
+    color: $light;
+  }
+
   &:hover {
-    &.btn-secondary {
-      background-color: white;
-      color: $secondary !important;
+    &.btn-primary {
+      background-color: $light;
+      color: $primary !important;
       transition: 300ms linear;
     }
 
