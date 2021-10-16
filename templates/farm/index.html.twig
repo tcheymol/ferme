@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'the_farm'|trans }}{% endblock %}
+
+{% block body %}
+    <div style="
+            background: bottom right / contain no-repeat url('{{ asset('build/ferme-cover.png') }}');
+            height: 400px;
+            ">
+        <div class="row d-flex h-100 align-items-center text-black-60">
+            <div class="col-12 col-md-5 offset-md-1">
+                <h1 class="text-center">{{ 'site_title'|trans }}</h1>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <p class="lead fs-4">
+                            {{ 'farm_subtitle'|trans }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container px-5 py-5">
+        <div class="row mt-4">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h2 class="text-primary">{{ 'about'|trans }}</h2>
+                <p class="lead mt-4">
+                    {{ 'farm_text'|trans|nl2br }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

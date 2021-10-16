@@ -3,23 +3,25 @@
     'farm': 'the_farm',
     'contact': 'find_us',
 } %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent text-white position-fixed w-100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent text-white w-100 z-index-1">
     <div class="container px-5">
         <a class="navbar-brand {{ currentRoute == 'home' ? ' text-white ' : ' text-dark ' }}"
-           href="{{ path('home') }}">{{ 'site_title'|trans }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+           href="{{ path('home') }}">{{ 'home'|trans }}</a>
+        <button class="navbar-toggler  {{ currentRoute == 'home' ? '  ' : ' bg-dark ' }}" type="button"
+                data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
+                    class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% for routeName, routeTitle in routes %}
                     <li class="nav-item">
-                        {{ include('common/button.html.twig', {text: routeTitle|trans, type: 'link', href: path(routeName), classes: currentRoute == 'home' ? ' text-white ' : ' text-dark ' }) }}
+                        {{ include('common/button.html.twig', {text: routeTitle|trans, type: 'link', href: path(routeName), classes: currentRoute == 'home' ? ' text-white text-decoration-none' : ' text-black-50 text-decoration-none' }) }}
                     </li>
                 {% endfor %}
                 <li class="nav-item ms-3">
-                    {{ include('common/button.html.twig', {text: 'login'|trans, type: 'light', href: path('app_login')}) }}
+                    {{ include('common/button.html.twig', {text: 'login'|trans, type: 'light', href: path('app_login'), classes: 'shadow'}) }}
                 </li>
                 <li class="nav-item ms-3">
                     {{ include('common/button.html.twig', {text: 'our_products'|trans, type: 'primary', href: path('product')}) }}
