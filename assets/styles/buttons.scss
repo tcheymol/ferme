@@ -1,0 +1,27 @@
+.btn {
+  span {
+    position: relative;
+    top: 0;
+  }
+
+  &.btn-primary {
+    color: $light;
+  }
+
+  &:hover {
+    &.btn-primary {
+      background-color: $light;
+      color: $primary !important;
+      transition: 300ms linear;
+    }
+
+    span {
+      top: -10px;
+      transition: 300ms linear;
+    }
+  }
+}
+
+.btn.btn-light {
+  position: relative;
+}

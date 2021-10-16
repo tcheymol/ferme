@@ -69,6 +69,16 @@ class Product
      */
     private ?int $quantity;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private bool $thisWeek = false;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private bool $showcased = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -183,6 +193,30 @@ class Product
     public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function isThisWeek(): ?bool
+    {
+        return $this->thisWeek;
+    }
+
+    public function setThisWeek(?bool $thisWeek): self
+    {
+        $this->thisWeek = $thisWeek;
+
+        return $this;
+    }
+
+    public function isShowcased(): ?bool
+    {
+        return $this->showcased;
+    }
+
+    public function setShowcased(?bool $showcased): self
+    {
+        $this->showcased = $showcased;
 
         return $this;
     }

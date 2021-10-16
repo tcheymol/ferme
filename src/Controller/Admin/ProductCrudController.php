@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -35,6 +36,8 @@ class ProductCrudController extends AbstractCrudController
             NumberField::new('price')->setLabel('price_e'),
             NumberField::new('kgPrice')->setLabel('kgPrice'),
             NumberField::new('quantity')->setLabel('quantity'),
+            BooleanField::new('thisWeek')->setLabel('thisWeek')->onlyOnForms(),
+            BooleanField::new('showcased')->setLabel('showcased')->onlyOnForms(),
             ImageField::new('imageName')->setLabel('image')
                 ->setUploadDir('/public/images')
                 ->setBasePath('/images')

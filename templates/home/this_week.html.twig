@@ -1,0 +1,30 @@
+<div class="min-vh-100 bg-light py-5">
+    <div class="container">
+        <div class="row text-center">
+            <h2>{{ 'selling_this_week'|trans }}</h2>
+
+            <div class="col-12 col-md-8 offset-md-2">
+                <p class="lead mt-4 fs-5 text-black-50">
+                    {{ 'this_week_intro'|trans|nl2br }}
+                </p>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    {% for product in products %}
+                        <div class="col-{{ product.showcased ? '6' : '4' }} mt-2">
+                            <div class="card h-100">
+                                <img src="{{ asset(product.imagePath) }}" class="card-img-top"
+                                     alt="{{ product.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ 'price'|trans }} : {{ product.price }} €</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -18,7 +18,11 @@ price_e: Prix (€)
 product: Produit
 products: Produits
 quantity: Quantité
+selling_this_week: En vente cette semaine
+showcased: Mettre en avant
 site_title: La Ferme de Ponturin
 the_farm: La ferme
+thisWeek: Produit de la semaine
+this_week_intro: "Retrouvez tous nos produits de saison et de la semaine disponibles en ligne uniquement. \n L'ensemble de la récolte de la semaine est disponible en vente à la ferme le samedi matin et le vendredi au marché de St Pierre d'Albigny"
 users: Utilisateurs
 weight_g: Poids (g)
