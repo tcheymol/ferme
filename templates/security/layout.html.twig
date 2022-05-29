@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'signup'|trans }}{% endblock %}
+
+{% block body %}
+    <header style="min-height: calc(100vh - 40px);" class="bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1 py-5">
+                    {% block securityCard %}
+                        <div class="card rounded-5 shadow border-white p-5">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-lg-5 offset-lg-1">
+                                        {% block securityCardLeft %}
+                                            {{ include('security/_login_form.html.twig') }}
+                                        {% endblock %}
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        {% block securityCardRight %}
+                                            <img src="{{ asset('build/login.png') }}" alt="login-image"
+                                                 class="d-lg-block d-none img-fluid">
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}

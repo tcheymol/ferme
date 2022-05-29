@@ -1,0 +1,11 @@
+{% extends 'security/layout.html.twig' %}
+
+{% block title %}{{ 'signup'|trans }}{% endblock %}
+
+{% block securityCardLeft %}
+    {{ include('security/_signup_form.html.twig') }}
+{% endblock %}
+
+{% block securityCardRight %}
+    <img src="{{ asset('build/signup.png') }}" alt="signup-image" class="d-lg-block d-none img-fluid">
+{% endblock %}

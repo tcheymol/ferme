@@ -11,8 +11,7 @@ security:
     providers:
         app_user_provider:
             entity:
-                class: App\Entity\User
-                property: email
+                class: 'App\Entity\User'
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -23,8 +22,8 @@ security:
             logout:
                 path: app_logout
             provider: app_user_provider
-              # activate different ways to authenticate
-              # https://symfony.com/doc/current/security.html#firewalls-authentication
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true

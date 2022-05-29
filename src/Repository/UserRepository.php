@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
@@ -15,7 +16,7 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  * @method User[]    findAll()
  * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
+class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface, UserLoaderInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -34,6 +35,38 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $user->setPassword($newHashedPassword);
         $this->_em->persist($user);
         $this->_em->flush();
+    }
+
+    public function loadUserByIdentifier(string $identifier): ?User
+    {
+        $entityManager = $this->getEntityManager();
+
+        try {
+            return $this->createQueryBuilder('u')
+                ->select('u')
+                ->andWhere('u.email = :identifier')
+                ->andWhere('u.enabled = :true')
+                ->setParameters([
+                    'identifier' => $identifier,
+                    'true' => true,
+                ])
+                ->getQuery()
+                ->getOneOrNullResult();
+
+            return $entityManager->createQuery(
+                'SELECT u
+                FROM App\Entity\User u
+                WHERE u.email = :query
+                AND u.enabled = :true'
+            )
+                ->setParameters([
+                    'query' => $identifier,
+                    'enabled' => true,
+                ])
+                ->getOneOrNullResult();
+        } catch (\Exception) {
+            return null;
+        }
     }
 
     // /**

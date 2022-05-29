@@ -1,0 +1,26 @@
+<h1 class="h3 mb-3 font-weight-normal text-start">{{ 'signup'|trans }}</h1>
+
+<div class="my-4 text-start">
+    <b>{{ 'already_an_account'|trans }}
+        <a class="text-primary" href="{{ path('app_login') }}">
+            {{ 'login'|trans }}</a>
+    </b>
+</div>
+
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-6">
+        {{ form_row(form.firstName) }}
+    </div>
+    <div class="col-6">
+        {{ form_row(form.lastName) }}
+    </div>
+</div>
+{{ form_rest(form) }}
+<button class="btn btn-primary rounded-pill fw-bold text-white mt-5 col-12" type="submit">
+        <span>
+            {{ 'signup_confirm'|trans }}
+            <i class="fa fa-user"></i>
+        </span>
+</button>
+{{ form_end(form) }}

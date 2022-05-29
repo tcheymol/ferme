@@ -1,15 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'security/layout.html.twig' %}
 
 {% block title %}{{ 'login'|trans }}{% endblock %}
 
-{% block body %}
-    <header style="min-height: calc(100vh - 40px);" class="bg-light text-center pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-10 offset-md-1 py-5">
-                    {{ include('security/_login_card.html.twig') }}
-                </div>
-            </div>
-        </div>
-    </header>
+{% block securityCardLeft %}
+    {{ include('security/_login_form.html.twig') }}
+{% endblock %}
+
+{% block securityCardRight %}
+    <img src="{{ asset('build/login.png') }}" alt="login-image" class="d-lg-block d-none img-fluid">
 {% endblock %}
