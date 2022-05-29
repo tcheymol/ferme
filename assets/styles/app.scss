@@ -1,6 +1,10 @@
 $primary: #DA9152;
+$secondary: #F2F4F8;
+
+$border-radius: 1rem;
 
 @import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "./buttons";
 
 .text-white-80 {
@@ -15,4 +19,8 @@ $primary: #DA9152;
 
 .z-index-1 {
   z-index: 1;
+}
+
+.fw-semibold {
+  font-weight: 550 !important
 }

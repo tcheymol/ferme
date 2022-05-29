@@ -1,0 +1,55 @@
+<form method="post" class="text-start">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a
+                    href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">{{ 'login'|trans }}</h1>
+
+    <div class="form-floating mb-3">
+        <input
+                id="inputEmail"
+                type="email"
+                class="form-control bg-secondary"
+                placeholder="{{ last_username }}"
+                name="email"
+                autocomplete="email"
+                required autofocus
+        >
+        <label for="inputEmail" class="fw-semibold">Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input
+                type="password"
+                name="password"
+                id="inputPassword"
+                class="form-control mt-2 bg-secondary"
+                autocomplete="current-password"
+                required
+                placeholder=""
+        >
+        <label for="inputPassword" class="fw-semibold">{{ 'password'|trans }}</label>
+    </div>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <div class="checkbox checkbox-xl mb-3">
+        <label class="custom-control-label">
+            <input type="checkbox" name="_remember_me" class="mr-3">
+            <span class="ml-4">{{ 'remember_me'|trans }}</span>
+        </label>
+    </div>
+
+    <button class="btn btn-primary rounded-pill fw-bold text-white mt-5 col-12" type="submit">
+        {{ 'login'|trans }}
+    </button>
+</form>
