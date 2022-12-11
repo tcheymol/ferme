@@ -31,8 +31,6 @@ security:
                 # The page users are redirect to when there is no previous page stored in the
                 # session (for example when the users access directly to the login page).
                 default_target_path: home
-            logout:
-                path: app_logout
             # This option allows users to choose to stay logged in for longer than
             # the session lasts using a cookie. Reference: https://symfony.com/doc/current/security/remember_me.html
             remember_me:
@@ -41,8 +39,9 @@ security:
                 # by default, the feature is enabled by checking a checkbox in the
                 # login form , uncomment the following line to always enable it.
                 #always_remember_me: true
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+            logout:
+                path: app_logout
+            entry_point: 'form_login'
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used

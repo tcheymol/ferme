@@ -28,6 +28,6 @@ class UserService
     public function createUserAndLogin(User $user): void
     {
         $this->createUser($user);
-        $this->security->login($user);
+        $this->security->login($user, 'form_login');
     }
 }
