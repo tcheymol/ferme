@@ -21,7 +21,6 @@ class SignupType extends AbstractType
                     'class' => 'form-floating',
                 ],
                 'attr' => ['placeholder' => 'firstName'],
-
             ])
             ->add('lastName', null, [
                 'label' => 'last_name',
@@ -29,13 +28,11 @@ class SignupType extends AbstractType
                     'class' => 'form-floating',
                 ],
                 'attr' => ['placeholder' => 'lastName'],
-
             ])->add('email', EmailType::class, [
                 'row_attr' => [
                     'class' => 'form-floating',
                 ],
                 'attr' => ['placeholder' => 'email', 'class' => 'mt-2'],
-
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
@@ -49,7 +46,7 @@ class SignupType extends AbstractType
                 'second_options' => [
                     'label' => 'confirm_password',
                     'attr' => ['placeholder' => 'confirm_password', 'class' => 'mt-2'],
-                ]
+                ],
             ]);
     }
 

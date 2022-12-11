@@ -14,7 +14,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ProductCrudController extends AbstractCrudController
 {
-
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
@@ -40,7 +39,7 @@ class ProductCrudController extends AbstractCrudController
             BooleanField::new('showcased')->setLabel('showcased')->onlyOnForms(),
             ImageField::new('imageName')->setLabel('image')
                 ->setUploadDir('/public/images')
-                ->setBasePath('/images')
+                ->setBasePath('/images'),
         ];
     }
 }

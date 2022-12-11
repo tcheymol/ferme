@@ -18,9 +18,11 @@ class UserService
 
     public function createUser(User $user): void
     {
-        $user->setPassword($this->hasher->hashPassword($user, $user->getPassword()));
-        $this->em->persist($user);
-        $this->em->flush();
+        if ($user->getPassword()) {
+            $user->setPassword($this->hasher->hashPassword($user, $user->getPassword()));
+            $this->em->persist($user);
+            $this->em->flush();
+        }
     }
 
     public function createUserAndLogin(User $user): void
