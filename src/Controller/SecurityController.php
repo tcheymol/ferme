@@ -32,7 +32,7 @@ class   SecurityController extends AbstractController
             return $service->createUserAndLogin($user, $request);
         }
 
-        return $this->renderForm('security/signup.html.twig', ['form' => $form]);
+        return $this->render('security/signup.html.twig', ['form' => $form]);
     }
 
     #[Route('/logout', name: 'app_logout')]
