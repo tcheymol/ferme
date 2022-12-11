@@ -11,6 +11,8 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
+ * @extends ServiceEntityRepository<User>
+ *
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
  * @method User|null findOneBy(array $criteria, array $orderBy = null)
  * @method User[]    findAll()
@@ -23,13 +25,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         parent::__construct($registry, User::class);
     }
 
-    /**
-     * Used to upgrade (rehash) the user's password automatically over time.
-     */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
         if (!$user instanceof User) {
-            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', \get_class($user)));
+            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', $user::class));
         }
 
         $user->setPassword($newHashedPassword);
@@ -39,10 +38,9 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     public function loadUserByIdentifier(string $identifier): ?User
     {
-        $entityManager = $this->getEntityManager();
-
         try {
-            return $this->createQueryBuilder('u')
+            /** @var ?User $user */
+            $user = $this->createQueryBuilder('u')
                 ->select('u')
                 ->andWhere('u.email = :identifier')
                 ->andWhere('u.enabled = :true')
@@ -53,48 +51,9 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
                 ->getQuery()
                 ->getOneOrNullResult();
 
-            return $entityManager->createQuery(
-                'SELECT u
-                FROM App\Entity\User u
-                WHERE u.email = :query
-                AND u.enabled = :true'
-            )
-                ->setParameters([
-                    'query' => $identifier,
-                    'enabled' => true,
-                ])
-                ->getOneOrNullResult();
+            return $user;
         } catch (\Exception) {
             return null;
         }
     }
-
-    // /**
-    //  * @return User[] Returns an array of User objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?User
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

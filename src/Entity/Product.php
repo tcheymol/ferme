@@ -7,24 +7,18 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
-/**
- * @Vich\Uploadable
- */
+#[Vich\Uploadable]
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {
-    const PUBLIC_IMAGE_PATH_PREFIX = '/images/';
+    final public const PUBLIC_IMAGE_PATH_PREFIX = '/images/';
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     *
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
-     */
+    #[Vich\UploadableField(mapping: 'product_image', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 
     #[ORM\Column(type: 'string', length: 510, nullable: true)]
@@ -40,22 +34,22 @@ class Product
     private string $name;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $weight;
+    private ?int $weight = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $price;
+    private ?int $price = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $kgPrice;
+    private ?int $kgPrice = null;
 
     #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $quantity;
+    private ?int $quantity = null;
 
     #[ORM\Column(type: 'boolean', nullable: true)]
-    private bool $thisWeek = false;
+    private ?bool $thisWeek = false;
 
     #[ORM\Column(type: 'boolean', nullable: true)]
-    private bool $showcased = false;
+    private ?bool $showcased = false;
 
     public function getId(): ?int
     {

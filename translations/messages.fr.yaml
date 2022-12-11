@@ -1,41 +1,42 @@
+about: À propos
 admin: Admin
 admin_home: Accueil admin
 admin_title: Admin Ferme Ponturin
+already_an_account: Déjà un compte ?
+confirm_password: Confirmer le mot de passe
+create_an_account: Créer un compte
 discover_our_products: Découvrir nos produits
 farm_sales: Les ventes à la ferme
+farm_subtitle: Découvrez qui nous sommes, notre vision et nos méthodes de travail
+farm_text: "La ferme est située dans le sud de la Savoie, dans la petite vallée du Gelon, au pied du massif de Belledonne, sur la commune de Chamoux-sur-Gelon. \n\n Nous sommes Kelly et Amaury. Nous cultivons des fleurs, des fruits, des légumes et des céréales. \n\n A la ferme, vous trouverez aussi Moon, notre chienne, Tchin-Tchin, notre chat, nos vingt poules et Maurice, ancien exploitant des champs, toujours présent pour donner un petit coup de main. \n\n Nous produisons tous nos plants dans notre pépinière, en privilégiant des variétés rustiques, originales et savoureuses. \n\n Nos pratiques agricoles, dites de 'sol vivant', visent à minimiser les dérangements causés à la microfaune du sol et à favoriser son développement par tous les moyens, afin de construire une fertilité durable, sans apport d'engrais minéraux. \n\n Nous avons commencé cette aventure en 2020, après avoir obtenu notre diplôme d'horticulture. En 2021, nous entrons en conversion pour l'obtention de la certification 'agriculture biologique'"
 find_us: Nous retrouver
+first_name: Prénom
 home: Accueil
 home_intro: Nous poduisons tous nos plans et notre pépinière en privilégiant des varietés rustiques, originales, et savoureuses
 image: Image
 kgPrice: Prix/kg
 know_more: En savoir plus
+last_name: Nom
 login: Connexion
+logout: Déconnexion
 markets: Les marchés
 name: Nom
+not_already_an_account: Pas encore de compte ?
 our_products: Nos produits
+password: Mot de passe
 price: Prix
 price_e: Prix (€)
 product: Produit
 products: Produits
 quantity: Quantité
+remember_me: Se souvenir de moi
 selling_this_week: En vente cette semaine
 showcased: Mettre en avant
+signup: Créer un compte
+signup_confirm: Confirmer la création
 site_title: La Ferme de Ponturin
 the_farm: La ferme
 thisWeek: Produit de la semaine
 this_week_intro: "Retrouvez tous nos produits de saison et de la semaine disponibles en ligne uniquement. \n L'ensemble de la récolte de la semaine est disponible en vente à la ferme le samedi matin et le vendredi au marché de St Pierre d'Albigny"
 users: Utilisateurs
 weight_g: Poids (g)
-farm_subtitle: Découvrez qui nous sommes, notre vision et nos méthodes de travail
-remember_me: Se souvenir de moi
-about: À propos
-farm_text: "La ferme est située dans le sud de la Savoie, dans la petite vallée du Gelon, au pied du massif de Belledonne, sur la commune de Chamoux-sur-Gelon. \n\n Nous sommes Kelly et Amaury. Nous cultivons des fleurs, des fruits, des légumes et des céréales. \n\n A la ferme, vous trouverez aussi Moon, notre chienne, Tchin-Tchin, notre chat, nos vingt poules et Maurice, ancien exploitant des champs, toujours présent pour donner un petit coup de main. \n\n Nous produisons tous nos plants dans notre pépinière, en privilégiant des variétés rustiques, originales et savoureuses. \n\n Nos pratiques agricoles, dites de 'sol vivant', visent à minimiser les dérangements causés à la microfaune du sol et à favoriser son développement par tous les moyens, afin de construire une fertilité durable, sans apport d'engrais minéraux. \n\n Nous avons commencé cette aventure en 2020, après avoir obtenu notre diplôme d'horticulture. En 2021, nous entrons en conversion pour l'obtention de la certification 'agriculture biologique'"
-password: Mot de passe
-confirm_password: Confirmer le mot de passe
-signup: Créer un compte
-signup_confirm: Confirmer la création
-first_name: Prénom
-last_name: Nom
-already_an_account: Déjà un compte ?
-not_already_an_account: Pas encore de compte ?
-create_an_account: Créer un compte
