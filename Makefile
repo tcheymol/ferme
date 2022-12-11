@@ -6,6 +6,7 @@ BIN     	  = ./vendor/bin
 PHPUNIT       = $(BIN)/simple-phpunit
 RECTOR        = $(BIN)/rector
 PHPSTAN       = $(BIN)/phpstan
+DEPLOYER      = $(BIN)/dep
 PHP_CS_FIXER  = $(BIN)/php-cs-fixer
 
 cs: rector stan fixer
@@ -27,9 +28,6 @@ fixer:
 	@$(PHP_CS_FIXER) fix tests --allow-risky=yes --using-cache=no
 
 deploy:
-	@$(CONSOLE) deploy preprod
+	@$(DEPLOYER) deploy
 
 dep: deploy
-
-deploy-prod:
-	@$(CONSOLE) deploy prod
