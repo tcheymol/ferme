@@ -2,10 +2,11 @@
 
 {% block title %}{{ 'signup'|trans }}{% endblock %}
 
-{% block securityCardLeft %}
-    {{ include('security/_signup_form.html.twig') }}
-{% endblock %}
-
-{% block securityCardRight %}
-    <img src="{{ asset('build/signup.png') }}" alt="signup-image" class="d-lg-block d-none img-fluid">
+{% block securityCardContent %}
+    <div class="col-12 col-lg-5 offset-lg-1">
+        {{ include('security/_signup_form.html.twig') }}
+    </div>
+    <div class="col-12 col-lg-6">
+        <img src="{{ asset('build/signup.png') }}" alt="signup-image" class="d-lg-block d-none img-fluid">
+    </div>}
 {% endblock %}

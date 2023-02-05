@@ -21,15 +21,14 @@
         </div>
 
     </div>
-
-    <div class="container px-5 py-5">
-        <div class="row mt-4">
-            <div class="col-12 col-md-8 offset-md-2">
-                <h2 class="text-primary">{{ 'about'|trans }}</h2>
-                <p class="lead mt-4">
-                    {{ 'farm_text'|trans|nl2br }}
-                </p>
+    <div class="bg-light">
+        <div class="container px-5 py-5 bg-light">
+            <div class="row mt-4">
+                <div class="col-12 col-md-8 offset-md-2">
+                    {{ include('farm/_card.html.twig') }}
+                </div>
             </div>
         </div>
     </div>
+
 {% endblock %}
