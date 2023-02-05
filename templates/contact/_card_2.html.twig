@@ -1,0 +1,27 @@
+{% extends 'common/_card.html.twig' %}
+
+{% block content %}
+    <div class="col-12 col-lg-5 offset-lg-1">
+        <img src="{{ asset('build/signup.png') }}" alt="login-image" class="d-lg-block d-none img-fluid">
+    </div>
+    <div class="col-12 col-lg-6">
+        <h5 class="">{{ 'at_the_farm'|trans }}</h5>
+        <div class="card-body">
+            <p class="card-text">
+                La Ferme de Ponturin vous accueille sur son stand à la ferme, tous les samedis matins de
+                8h
+                à
+                12h30.
+                <br/>
+                A PARTIR DU MOIS DE MAI 2021
+                <br/>
+                Vous pourrez retrouver nos fruits et légumes, bouquets de fleurs, pains et farines de la
+                semaine
+                et
+                retirez vos commandes.
+                <br/>
+                À bientôt!
+            </p>
+        </div>
+    </div>
+{% endblock %}
